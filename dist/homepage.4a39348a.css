@@ -1,0 +1,15 @@
+@font-face {
+  font-family: austein;
+  src: url("Austein.e718381e.otf") format("otf"), url("Austein.b34f0159.ttf") format("ttf"), url("Austein.b8251511.woff2") format("woff2"), url("Austein-Script.1d3397bb.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: poppins;
+  src: url("Poppins-Black.ff8bc8af.ttf") format("ttf"), url("Poppins-BlackItalic.8d5f3eae.ttf") format("ttf"), url("Poppins-Bold.28155372.ttf") format("ttf"), url("Poppins-BoldItalic.71704d9e.ttf") format("ttf"), url("Poppins-ExtraBold.e2327636.ttf") format("ttf"), url("Poppins-ExtraBoldItalic.e1d4bd28.ttf") format("ttf"), url("Poppins-ExtraLight.66b9cf7a.ttf") format("ttf"), url("Poppins-ExtraLightItalic.49d257c4.ttf") format("ttf"), url("Poppins-Italic.3c69bdf1.ttf") format("ttf"), url("Poppins-Light.c7b1f7ec.ttf") format("ttf"), url("Poppins-LightItalic.edb4f2bd.ttf") format("ttf"), url("Poppins-Medium.b6f1aa47.ttf") format("ttf"), url("Poppins-MediumItalic.53238a58.ttf") format("ttf"), url("Poppins-Regular.0396ac8e.ttf") format("ttf"), url("Poppins-SemiBold.01d67264.ttf") format("ttf"), url("Poppins-SemiBoldItalic.81af97a8.ttf") format("ttf"), url("Poppins-Thin.0673286c.ttf") format("ttf"), url("Poppins-ThinItalic.eb00619c.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*# sourceMappingURL=homepage.4a39348a.css.map */

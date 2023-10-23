@@ -1,0 +1,38 @@
+
+@font-face {
+    font-family: 'austein';
+    src: url("Austein/Austein.otf") format("otf"),
+    url("Austein/Austein.ttf") format("ttf"),
+    url("Austein/Austein.woff2") format("woff2"),
+    url("Austein/Austein-Script.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*font-style van font-family poppins aanpassen, afhankelijk van of het italic of anderszins is,
+evt. extra groep @font-face van font-family poppins creeren */
+
+@font-face {
+    font-family: 'poppins';
+    src: url("Poppins/Poppins-Black.ttf") format("ttf"),
+    url("Poppins/Poppins-BlackItalic.ttf") format("ttf"),
+    url("Poppins/Poppins-Bold.ttf") format("ttf"),
+    url("Poppins/Poppins-BoldItalic.ttf") format("ttf"),
+    url("Poppins/Poppins-ExtraBold.ttf") format("ttf"),
+    url("Poppins/Poppins-ExtraBoldItalic.ttf") format("ttf"),
+    url("Poppins/Poppins-ExtraLight.ttf") format("ttf"),
+    url("Poppins/Poppins-ExtraLightItalic.ttf") format("ttf"),
+    url("Poppins/Poppins-Italic.ttf") format("ttf"),
+    url("Poppins/Poppins-Light.ttf") format("ttf"),
+    url("Poppins/Poppins-LightItalic.ttf") format("ttf"),
+    url("Poppins/Poppins-Medium.ttf") format("ttf"),
+    url("Poppins/Poppins-MediumItalic.ttf") format("ttf"),
+    url("Poppins/Poppins-Regular.ttf") format("ttf"),
+    url("Poppins/Poppins-SemiBold.ttf") format("ttf"),
+    url("Poppins/Poppins-SemiBoldItalic.ttf") format("ttf"),
+    url("Poppins/Poppins-Thin.ttf") format("ttf"),
+    url("Poppins/Poppins-ThinItalic.ttf") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+

@@ -1,0 +1,15 @@
+{
+  "name": "eindopdracht-2023-definitief",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/homepage.js",
+  "scripts": {
+    "start": "parcel src/homepage.html",
+    "build": "parcel build src/homepage.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
+}

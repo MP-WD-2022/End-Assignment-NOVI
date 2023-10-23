@@ -1,0 +1,40 @@
+main {
+  margin: 5vw 35vh;
+}
+
+#product-search {
+  background-image: url("simple-grey-search-icon.c0a824a2.png");
+  background-position: 90%;
+  background-repeat: no-repeat;
+}
+
+.btn--product {
+  background-image: url("arrow-icon-15px11px.38daa453.png");
+  background-position: 90%;
+  background-repeat: no-repeat;
+}
+
+.form {
+  flex-direction: row;
+  align-items: baseline;
+  width: 30vw;
+  padding-block: 10px;
+  display: flex;
+}
+
+.table {
+  border-collapse: collapse;
+  border-bottom: 0;
+  width: 25%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+.table-group-divider {
+  border-top: 2px solid #000;
+}
+
+/*# sourceMappingURL=calorie-calculator-page.a3df6841.css.map */

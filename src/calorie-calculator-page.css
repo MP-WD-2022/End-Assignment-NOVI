@@ -1,0 +1,43 @@
+main {
+    margin: 5vw 35vh;
+}
+
+#product-search {
+    background-image: url("../assets/icons/simple-grey-search-icon.png");
+    background-position: 90% 50%;
+    background-repeat: no-repeat;
+}
+
+.btn--product {
+    background-image: url("../assets/icons/arrow-icon-15px11px.png");
+    background-position: 90% 50%;
+    background-repeat: no-repeat;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    /*justify-content: center;*/
+    align-items: baseline;
+    width: 30vw;
+    padding-block: 10px;
+}
+
+.btn--servings {
+    /*width: px;*/
+}
+
+.table {
+    border-collapse: collapse;
+    width: 25%;
+    border-bottom: 0;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+.table-group-divider {
+    border-top: 2px black solid;
+}

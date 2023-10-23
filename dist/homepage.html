@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/homepage.136d5c6a.css">
+    <link rel="stylesheet" href="/homepage.4a39348a.css">
+    <link rel="stylesheet" href="/homepage.4d663569.css">
+</head>
+<body>
+<header class="header">
+    <nav class="header__nav">
+        <div class="header__container">
+            <a href="" class="header__logo">The Clueless Cook</a>
+            <ul class="header__list">
+                <li class="header__item"><a href="/homepage.html">Home</a></li>
+                <li class="header__item"><a href="">About</a></li>
+                <li class="header__item"><a href="/calorie-calculator-page.html">Calculator</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<main>
+    <div class="hero-image">
+        <article class="hero-text">
+            <h1>Delicious Recipes.</h1>
+            <h3>Daily Updated.</h3>
+            <input type="button" class="btn btn--recipes" onclick="script" value="Find Recipes" style="cursor: pointer">
+        </article>
+    </div>
+    <div class="recipes recipes--daily-updated">
+        <article class="recipe-card" onclick="script" style="cursor: pointer">
+            <img class="recipe-card-image" src="/homepage-pic1.445d6776.jpg" alt="test-pic1" style="width: 100%">
+            <h5>Recipe Title</h5>
+            <p>300 Calories | 10 Ingredients</p><p>
+            </p><div class="time">20 min.</div>
+
+<!--              */ dit verwerken binnen een functie op homepage.js-->
+<!--            <a href="recipe-detail-page.html" class="recipe-card__content-link"></a> /*-->
+
+        </article>
+        <article class="recipe-card recipe-card--transform">
+            <img src="/homepage-pic2.4370c185.jpg" alt="test-pic2" style="width: 100%">
+            <h5>Recipe Title</h5>
+            <p>300 Calories | 10 Ingredients</p><p>
+            </p><div class="time">20 min.</div>
+        </article>
+        <article class="recipe-card">
+            <img src="/homepage-pic3.7dec3701.jpg" alt="test-pic3" style="width: 100%">
+            <h5>Recipe Title</h5>
+            <p>300 Calories | 10 Ingredients</p><p>
+            </p><div class="time">20 min.</div>
+        </article>
+    </div>
+    <!--////wel of niet labels toepassen bij 'input' en 'select'? Bij o.a. diet-selectie kan ik maar voor 1 diet kiezen
+    terwijl het vlgsmij de mogelijkheid moet bieden meerdere opties te selecteren, hoe kan ik dit aanpassen?////-->
+    <div>
+        <form class="form">
+            <label for="recipe-search"></label>
+            <input type="text" id="recipe-search" name="recipe search" placeholder="Recipe search">
+            <label for="meal-type"></label>
+            <select name="meal-type" id="meal-type">
+                <option value="" disabled="" selected="">Meal type</option>
+                <option value="">breakfast</option>
+                <option value="">brunch</option>
+                <option value="">lunch/dinner</option>
+                <option value="">snack</option>
+                <option value="">teatime</option>
+            </select>
+            <label for="cuisine"></label>
+            <select name="cuisine" id="cuisine">
+                <option value="" disabled="" selected="">Cuisine</option>
+                <option value="">american</option>
+                <option value="">asian</option>
+                <option value="">british</option>
+                <option value="">caribbean</option>
+                <option value="">central europe</option>
+                <option value="">chinese</option>
+                <option value="">eastern europe</option>
+                <option value="">french</option>
+                <option value="">greek</option>
+                <option value="">indian</option>
+                <option value="">italian</option>
+                <option value="">japanese</option>
+                <option value="">korean</option>
+                <option value="">kosher</option>
+                <option value="">mediterranean</option>
+                <option value="">mexican</option>
+                <option value="">middle eastern</option>
+                <option value="">nordic</option>
+                <option value="">south american</option>
+                <option value="">south east asian</option>
+                <option value="">world</option>
+            </select>
+            <label for="diet"></label>
+            <select name="diet" id="diet">
+                <option value="" disabled="" selected="">Diet</option>
+                <option value="">Alcohol-Free</option>
+                <option value="">Balanced</option>
+                <option value="">High-Fiber</option>
+                <option value="">High-Protein</option>
+                <option value="">Immunity</option>
+                <option value="">Keto</option>
+                <option value="">Kidney-Friendly</option>
+                <option value="">Kosher</option>
+                <option value="">Low-Carb</option>
+                <option value="">Low-Fat</option>
+                <option value="">Low Potassium</option>
+                <option value="">Low-Sodium</option>
+                <option value="">Low-Sugar</option>
+                <option value="">No oil added</option>
+                <option value="">No-sugar</option>
+                <option value="">Paleo</option>
+                <option value="">Pescatarian</option>
+                <option value="">Pork-Free</option>
+                <option value="">Red meat-Free</option>
+                <option value="">Sugar-conscious</option>
+                <option value="">Vegan</option>
+                <option value="">Vegetarian</option>
+            </select>
+            <label for="time"></label>
+            <select name="time" id="time">
+                <option value="" disabled="" selected="">Time</option>
+                <option value="">20 minutes</option>
+                <option value="">20-40 minutes</option>
+                <option value="">40+ minutes</option>
+            </select>
+            <input type="button" class="btn btn--recipes" onclick="script" value="Search" style="cursor: pointer">
+        </form>
+    </div>
+    <div class="recipes">
+        <article class="recipe-card">
+            <img src="/homepage-pic4.09cc3a64.jpg" alt="test-pic4" style="width: 100%">
+            <h5>Recipe Title</h5>
+            <p>300 Calories | 10 Ingredients</p><p>
+            </p><div class="time">20 min.</div>
+        </article>
+        <article class="recipe-card">
+            <img src="/homepage-pic5.02a44bc9.jpg" alt="test-pic5" style="width: 100%">
+            <h5>Recipe Title</h5>
+            <p>300 Calories | 10 Ingredients</p><p>
+            </p><div class="time">20 min.</div>
+        </article>
+        <article class="recipe-card">
+            <img src="/homepage-pic6.e870e169.jpg" alt="test-pic6" style="width: 100%">
+            <h5>Recipe Title</h5>
+            <p>300 Calories | 10 Ingredients</p><p>
+            </p><div class="time">20 min.</div>
+        </article>
+    </div>
+    <div class="recipes">
+        <article class="recipe-card">
+            <img src="/homepage-pic7.e3b82a23.jpg" alt="test-pic7" style="width: 100%">
+            <h5>Recipe Title</h5>
+            <p>300 Calories | 10 Ingredients</p><p>
+            </p><div class="time">20 min.</div>
+        </article>
+        <article class="recipe-card">
+            <img src="/homepage-pic8.4b063caa.jpg" alt="test-pic8" style="width: 100%">
+            <h5>Recipe Title</h5>
+            <p>300 Calories | 10 Ingredients</p><p>
+            </p><div class="time">20 min.</div>
+        </article>
+        <article class="recipe-card">
+            <img src="/homepage-pic9.bf1790cb.jpg" alt="test-pic9" style="width: 100%">
+            <h5>Recipe Title</h5>
+            <p>300 Calories | 10 Ingredients</p><p>
+            </p><div class="time">20 min.</div>
+        </article>
+    </div>
+</main>
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__item">
+            <h3>Information</h3>
+            <ul>
+                <li class="information-item"><a href="#">Nullam a enim</a></li>
+                <li class="information-item"><a href="#">Quisque cursus</a></li>
+                <li class="information-item"><a href="#">Cras egestas</a></li>
+                <li class="information-item"><a href="#">Nunc vitae</a></li>
+            </ul>
+        </div>
+        <div class="footer__item">
+            <h3>About</h3>
+            <ul>
+                <li class="about-item"><a href="#">Quisque cursus</a></li>
+                <li class="about-item"><a href="#">Cras egestas</a></li>
+                <li class="about-item"><a href="#">Nunc vitae</a></li>
+            </ul>
+        </div>
+        <div class="footer__item">
+            <h3>Contact</h3>
+            <ul>
+                <li class="contact-item"><a href="#">Cras egestas</a></li>
+                <li class="contact-item"><a href="#">Nunc vitae</a></li>
+                <li class="contact-item"><a href="#">Nullam a enim</a></li>
+            </ul>
+        </div>
+        <div class="footer__item">
+            <h3>Social</h3>
+            <div class="footer__socials">
+                <a href="#" class="dot dot--facebook"></a>
+                <a href="#" class="dot dot--instagram"></a>
+                <a href="#" class="dot dot--linkedin"></a>
+                <a href="#" class="dot dot--twitter"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="/homepage.ef10447f.js" defer=""></script>
+
+</body>
+</html>

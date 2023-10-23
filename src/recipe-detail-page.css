@@ -1,0 +1,60 @@
+
+.two-columns {
+    display: -webkit-flex;
+    display: flex;
+}
+
+.column {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px;
+}
+
+
+/*aside {*/
+/*    display: block;*/
+/*}*/
+
+/*ul.a {*/
+/*    list-style-type: circle;*/
+/*}*/
+
+.recipe-info {
+    color: #283e53;
+}
+
+h3 {
+    color: #70b6be;
+}
+
+h4 {
+    color: #283e53;
+}
+
+.health-label-button {
+    background-color: #70b6be;
+    border: black solid 2px;
+    color: #283e53;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+/*.js-injected-image {*/
+
+/*}*/
+
+img {
+    width: 300px;
+    height: 300px;
+}
+
+th {
+    color: #283e53;
+}

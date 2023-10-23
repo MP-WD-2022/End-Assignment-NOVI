@@ -1,0 +1,275 @@
+@import url("../assets/fonts/fonts.css");
+
+/*////////////////////////////////////////
+    Table of Contents
+    1. Global Styles
+    2. Typography
+    3. Layout
+        3.1 Reusables
+        3.2 Other
+    4. Areas
+        4.1 Header
+        4.2
+        4.3
+        4.4
+        4.5
+        4.6 Footer
+    5. Media Queries
+///////////////////////////////////////*/
+
+/* --------------- 1. Global Styles --------------*/
+
+/*-----------CSS-reset------------*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*-----------CSS-reset------------*/
+
+body {
+    background-color: #ffffff;
+    font-family: Poppins, sans-serif;
+    margin: 0;
+}
+
+/* --------------- 2. Typography --------------*/
+
+h1 {
+    font-size: xxx-large;
+    position: relative;
+}
+
+h2 {
+    color: #283e53;
+}
+
+h3 {
+    font-size: xxx-large;
+    font-weight: normal;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+p {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /*word-wrap: break-word;*/
+}
+
+/* --------------- 3. Layout --------------*/
+
+/* --------------- 3.1 Reusables --------------*/
+
+.btn {
+    margin: 10px;
+    color: #283e53;
+    background-color: #70b6be;
+    font-weight: bold;
+    width: 150px;
+    border-radius: 4px;
+    padding: 10px 20px 10px 20px;
+    text-align: left;
+}
+
+.btn:hover {
+    color: #70b6be;
+    background-color: #283e53;
+}
+
+input[type=text] {
+    margin: 10px;
+    width: 18%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 20px 10px 20px;
+}
+
+.time {
+    text-align: right;
+    background-image: url("../assets/icons/time.png");
+    background-position: 80% 50%;
+    background-repeat: no-repeat;
+    background-size: 15px;
+}
+
+/* --------------- 3.2 Other --------------*/
+
+/* --------------- 4. Areas --------------*/
+
+/* --------------- 4.1 Header --------------*/
+
+.header__nav {
+    justify-content: space-between;
+    background-color: #eeeeee;
+}
+
+.header__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    margin-inline: 10px;
+    padding-block: 10px;
+}
+
+.header__logo {
+    font-family: 'austein';
+    src: url("../assets/fonts/fonts.css");
+    font-size: xx-large;
+    color: #283e53;
+    text-decoration: none;
+}
+
+.header__list {
+    font-family: Poppins, sans-serif;
+    src: url("../assets/fonts/fonts.css");
+    /*src: url("../assets/fonts/Poppins/Poppins-Bold.ttf");*/
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    flex-basis: 300px;
+    justify-content: space-evenly;
+}
+
+.header__item {
+    list-style-type: none;
+}
+
+.header__item a {
+    color: #283e53;
+    text-decoration: none;
+}
+
+/* --------------- 4.2  --------------*/
+
+/* --------------- 4.3  --------------*/
+
+/* --------------- 4.4  --------------*/
+
+/* --------------- 4.5  --------------*/
+
+/* --------------- 4.6 Footer --------------*/
+
+.footer {
+    min-width: 500px;
+    padding:50px 0;
+    background-color:#283e53;
+    color:#70b6be;
+}
+
+.footer__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+    margin-inline: 10px;
+    padding-block: 10px;
+}
+
+.footer__item {
+    font-family: Poppins, sans-serif;
+    src: url("../assets/fonts/fonts.css");
+    /*src: url("../assets/fonts/Poppins/Poppins-Bold.ttf");*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer h3 {
+    margin-top:0;
+    margin-bottom:12px;
+    font-weight:bold;
+    font-size:16px;
+}
+
+.information-item a, .about-item a, .contact-item a {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+
+.footer ul {
+    padding:0;
+    list-style:none;
+    line-height:1.6;
+    font-size:14px;
+    margin-bottom:0;
+    color:#eeeeee;
+}
+
+.footer-item.social {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.footer__socials {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.dot {
+    height: 25px;
+    background-color: #70b6be;
+    background-size: 15px;
+    background-position: center;
+    padding: 10px;
+    width: 25px;
+    margin: 5px 5px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+}
+
+.dot--facebook {
+    background-image: url("../assets/icons/facebook.png");
+}
+
+.dot--facebook:hover {
+    opacity: 40%;
+}
+
+.dot--instagram {
+    background-image: url("../assets/icons/instagram.png");
+}
+
+.dot--instagram:hover {
+    opacity: 40%;
+}
+
+.dot--linkedin {
+    background-image: url("../assets/icons/linkedin.png");
+}
+
+.dot--linkedin:hover {
+    opacity: 40%;
+}
+
+.dot--twitter {
+    background-image: url("../assets/icons/twitter.png");
+}
+
+.dot--twitter:hover {
+    opacity: 40%;
+}
+
+/* --------------- 5. Media Queries --------------*/
+
+@media (max-width: 500px) {
+    .two-columns {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+
+
+
+
