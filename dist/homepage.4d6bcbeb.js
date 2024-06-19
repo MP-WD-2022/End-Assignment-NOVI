@@ -577,14 +577,17 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _fetchRecipeData = require("./functions/fetchRecipeData");
 var _fetchRecipeDataDefault = parcelHelpers.interopDefault(_fetchRecipeData);
+var _getRecipeById = require("./functions/getRecipeById");
+var _getRecipeByIdDefault = parcelHelpers.interopDefault(_getRecipeById);
 function myFunction() {
     const input = document.getElementById("recipe-search-field");
     const userInput = input.value;
     (0, _fetchRecipeDataDefault.default)(userInput);
+    (0, _getRecipeByIdDefault.default)();
 }
 document.getElementById("button").addEventListener("click", myFunction);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./functions/fetchRecipeData":"4FvxE"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./functions/fetchRecipeData":"4FvxE","./functions/getRecipeById":"aGkdq"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -5554,6 +5557,50 @@ function generateRandomCards(arr) {
             </li>
             `;
     });
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aGkdq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _getRandomInt = require("../helpers/getRandomInt");
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+const API_ID = "5644587d"; // Replace with your app_id
+const API_KEY = "17843108b9fac140434ab2a2ccb2655b"; // Replace with your app_key
+const BASE_URL = `https://api.edamam.com/api/recipes/v2/`;
+async function fetchRecipeById() {
+    try {
+        const RECIPE_ID = (0, _getRandomInt.getRandomInt)(1, 100); // Replace with the actual recipe ID you want to fetch
+        const response = await (0, _axiosDefault.default).get(BASE_URL + RECIPE_ID, {
+            params: {
+                type: "public",
+                app_id: API_ID,
+                app_key: API_KEY
+            }
+        });
+        const recipe = response.data.recipe;
+        console.log("Recipe:", recipe.label);
+        console.log("Ingredients:", recipe.ingredientLines);
+        console.log("URL:", recipe.url);
+    } catch (error) {
+        console.error("Error fetching recipe by ID:", error);
+        if (error.response) {
+            if (error.response.status === 404) console.error("Recipe not found");
+            else if (error.response.status === 500) console.error("Internal server error");
+            else console.error("An error occurred:", error.message);
+        }
+    }
+}
+exports.default = fetchRecipeById;
+
+},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../helpers/getRandomInt":"5g8DS"}],"5g8DS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getRandomInt", ()=>getRandomInt);
+function getRandomInt(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["f3BSW","gLLPy"], "gLLPy", "parcelRequireca8e")
