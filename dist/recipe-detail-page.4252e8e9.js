@@ -574,6 +574,16 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 }
 
 },{}],"aXLiv":[function(require,module,exports) {
+document.addEventListener("DOMContentLoaded", function(event) {
+    event.preventDefault();
+    const parameters = new URLSearchParams(window.location.search);
+    // console.log( parameters );
+    const id = parameters.get("id");
+    // console.log( id );
+    const showIdOnPage = document.getElementById("recipe-id");
+    showIdOnPage.textContent = id;
+    createRecipePage(id);
+});
 
 },{}]},["85AVO","aXLiv"], "aXLiv", "parcelRequireca8e")
 

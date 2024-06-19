@@ -45,7 +45,7 @@ h2 {
 }
 
 h3 {
-    font-size: xxx-large;
+    /*font-size: xxx-large;*/
     font-weight: normal;
     position: relative;
     margin-bottom: 20px;
@@ -80,7 +80,6 @@ p {
 
 input[type=text] {
     margin: 10px;
-    width: 18%;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;

@@ -30,9 +30,9 @@
             <input type="button" class="btn btn--recipes" onclick="script" value="Find Recipes" style="cursor:pointer">
         </article>
     </div>
+<!--    <ul id="random-recipe-card-list">-->
     <div class="recipes recipes--daily-updated">
         <article class="recipe-card" onclick="script" style="cursor:pointer">
-<!--            <img class="recipe-card-image" src="" alt="" style="width:100%">-->
             <h5>Recipe Title</h5>
             <p>300 Calories | 10 Ingredients<p>
             <div class="time">20 min.</div>
@@ -42,134 +42,139 @@
 
         </article>
         <article class="recipe-card recipe-card--transform">
-<!--            <img src="" alt="" style="width:100%">-->
             <h5>Recipe Title</h5>
             <p>300 Calories | 10 Ingredients<p>
             <div class="time">20 min.</div>
         </article>
         <article class="recipe-card">
-<!--            <img src="" alt="" style="width:100%">-->
             <h5>Recipe Title</h5>
             <p>300 Calories | 10 Ingredients<p>
             <div class="time">20 min.</div>
         </article>
     </div>
+<!--    </ul>-->
     <!--////wel of niet labels toepassen bij 'input' en 'select'? Bij o.a. diet-selectie kan ik maar voor 1 diet kiezen
     terwijl het vlgsmij de mogelijkheid moet bieden meerdere opties te selecteren, hoe kan ik dit aanpassen?////-->
     <div>
-        <form class="form">
-            <label for="recipe-search"></label>
-            <input type="text" id="recipe-search" name="recipe search" placeholder="Recipe search">
-            <label for="meal-type"></label>
-            <select name="meal-type" id="meal-type">
+        <form id="onSubmit" class="form">
+            <label for="recipe-search-field">
+            <input type="text" id="recipe-search-field" name="recipe search" placeholder="Recipe search">
+            </label>
+            <label for="meal-type-field">
+            <select name="meal-type" id="meal-type-field">
                 <option value="" disabled selected>Meal type</option>
-                <option value="">breakfast</option>
-                <option value="">brunch</option>
-                <option value="">lunch/dinner</option>
-                <option value="">snack</option>
-                <option value="">teatime</option>
+                <option value="Breakfast">Breakfast</option>
+                <option value="Dinner">Dinner</option>
+                <option value="Lunch">Lunch</option>
+                <option value="Snack">Snack</option>
+                <option value="Teatime">Teatime</option>
             </select>
-            <label for="cuisine"></label>
-            <select name="cuisine" id="cuisine">
+            </label>
+            <label for="cuisine-field">
+            <select name="cuisine" id="cuisine-field">
                 <option value="" disabled selected>Cuisine</option>
-                <option value="">american</option>
-                <option value="">asian</option>
-                <option value="">british</option>
-                <option value="">caribbean</option>
-                <option value="">central europe</option>
-                <option value="">chinese</option>
-                <option value="">eastern europe</option>
-                <option value="">french</option>
-                <option value="">greek</option>
-                <option value="">indian</option>
-                <option value="">italian</option>
-                <option value="">japanese</option>
-                <option value="">korean</option>
-                <option value="">kosher</option>
-                <option value="">mediterranean</option>
-                <option value="">mexican</option>
-                <option value="">middle eastern</option>
-                <option value="">nordic</option>
-                <option value="">south american</option>
-                <option value="">south east asian</option>
-                <option value="">world</option>
+                <option value="American">American</option>
+                <option value="Asian">Asian</option>
+                <option value="British">British</option>
+                <option value="Caribbean">Caribbean</option>
+                <option value="Central Europe">Central Europe</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Eastern Europe">Eastern Europe</option>
+                <option value="French">French</option>
+<!--                <option value="Greek">Greek</option>-->
+                <option value="Indian">Indian</option>
+                <option value="Italian">Italian</option>
+                <option value="Japanese">Japanese</option>
+<!--                <option value="Korean">Korean</option>-->
+                <option value="Kosher">Kosher</option>
+                <option value="Mediterranean">Mediterranean</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Middle Eastern">Middle Eastern</option>
+                <option value="Nordic">Nordic</option>
+                <option value="South American">South American</option>
+                <option value="South East Asian">South East Asian</option>
+<!--                <option value="World">world</option>-->
             </select>
-            <label for="diet"></label>
-            <select name="diet" id="diet">
+            </label>
+            <label for="diet-field">
+            <select name="diet" id="diet-field">
                 <option value="" disabled selected>Diet</option>
-                <option value="">Alcohol-Free</option>
-                <option value="">Balanced</option>
-                <option value="">High-Fiber</option>
-                <option value="">High-Protein</option>
-                <option value="">Immunity</option>
-                <option value="">Keto</option>
-                <option value="">Kidney-Friendly</option>
-                <option value="">Kosher</option>
-                <option value="">Low-Carb</option>
-                <option value="">Low-Fat</option>
-                <option value="">Low Potassium</option>
-                <option value="">Low-Sodium</option>
-                <option value="">Low-Sugar</option>
-                <option value="">No oil added</option>
-                <option value="">No-sugar</option>
-                <option value="">Paleo</option>
-                <option value="">Pescatarian</option>
-                <option value="">Pork-Free</option>
-                <option value="">Red meat-Free</option>
-                <option value="">Sugar-conscious</option>
-                <option value="">Vegan</option>
-                <option value="">Vegetarian</option>
+                <option value="Alcohol-Free">Alcohol-Free</option>
+                <option value="Balanced">Balanced</option>
+                <option value="High-Fiber">High-Fiber</option>
+                <option value="High-Protein">High-Protein</option>
+                <option value="Immunity">Immunity</option>
+                <option value="Keto">Keto</option>
+                <option value="Kidney-Friendly">Kidney-Friendly</option>
+                <option value="Kosher">Kosher</option>
+                <option value="Low-Carb">Low-Carb</option>
+                <option value="Low-Fat">Low-Fat</option>
+                <option value="Low Potassium">Low Potassium</option>
+                <option value="Low-Sodium">Low-Sodium</option>
+                <option value="Low-Sugar">Low-Sugar</option>
+                <option value="No oil added">No oil added</option>
+                <option value="No-sugar">No-sugar</option>
+                <option value="Paleo">Paleo</option>
+                <option value="Pescatarian">Pescatarian</option>
+                <option value="Pork-Free">Pork-Free</option>
+                <option value="Red meat-Free">Red meat-Free</option>
+                <option value="Sugar-conscious">Sugar-conscious</option>
+                <option value="Vegan">Vegan</option>
+                <option value="Vegetarian">Vegetarian</option>
             </select>
-            <label for="time"></label>
-            <select name="time" id="time">
+            </label>
+            <label for="time-field">
+            <select name="time" id="time-field">
                 <option value="" disabled selected>Time</option>
                 <option value="">20 minutes</option>
                 <option value="">20-40 minutes</option>
                 <option value="">40+ minutes</option>
             </select>
-            <input type="button" class="btn btn--recipes" onclick="script" value="Search" style="cursor:pointer">
+            </label>
+<!--            <input type="button" class="btn btn&#45;&#45;recipes" onclick="script" value="Search" style="cursor:pointer">-->
+            <button type="button" id="button" class="btn">Search</button>
         </form>
     </div>
-    <div class="recipes">
-        <article class="recipe-card">
-<!--            <img src="" alt="" style="width:100%">-->
-            <h5>Recipe Title</h5>
-            <p>300 Calories | 10 Ingredients<p>
-            <div class="time">20 min.</div>
-        </article>
-        <article class="recipe-card">
-<!--            <img src="" alt="" style="width:100%">-->
-            <h5>Recipe Title</h5>
-            <p>300 Calories | 10 Ingredients<p>
-            <div class="time">20 min.</div>
-        </article>
-        <article class="recipe-card">
-<!--            <img src="" alt="" style="width:100%">-->
-            <h5>Recipe Title</h5>
-            <p>300 Calories | 10 Ingredients<p>
-            <div class="time">20 min.</div>
-        </article>
-    </div>
-    <div class="recipes">
-        <article class="recipe-card">
-<!--            <img src="" alt="" style="width:100%">-->
-            <h5>Recipe Title</h5>
-            <p>300 Calories | 10 Ingredients<p>
-            <div class="time">20 min.</div>
-        </article>
-        <article class="recipe-card">
-<!--            <img src="" alt="" style="width:100%">-->
-            <h5>Recipe Title</h5>
-            <p>300 Calories | 10 Ingredients<p>
-            <div class="time">20 min.</div>
-        </article>
-        <article class="recipe-card">
-<!--            <img src="" alt="" style="width:100%">-->
-            <h5>Recipe Title</h5>
-            <p>300 Calories | 10 Ingredients<p>
-            <div class="time">20 min.</div>
-        </article>
-    </div>
+
+    <ul id="recipe-card-list"></ul>
+    <span id="error-message"></span>
+    <a href="recipe-detail-page.html"></a>
+
+
+<!--    <div class="recipes">-->
+<!--        <article class="recipe-card">-->
+<!--            <h5>Recipe Title</h5>-->
+<!--            <p>300 Calories | 10 Ingredients<p>-->
+<!--            <div class="time">20 min.</div>-->
+<!--        </article>-->
+<!--        <article class="recipe-card">-->
+<!--            <h5>Recipe Title</h5>-->
+<!--            <p>300 Calories | 10 Ingredients<p>-->
+<!--            <div class="time">20 min.</div>-->
+<!--        </article>-->
+<!--        <article class="recipe-card">-->
+<!--            <h5>Recipe Title</h5>-->
+<!--            <p>300 Calories | 10 Ingredients<p>-->
+<!--            <div class="time">20 min.</div>-->
+<!--        </article>-->
+<!--    </div>-->
+<!--    <div class="recipes">-->
+<!--        <article class="recipe-card">-->
+<!--            <h5>Recipe Title</h5>-->
+<!--            <p>300 Calories | 10 Ingredients<p>-->
+<!--            <div class="time">20 min.</div>-->
+<!--        </article>-->
+<!--        <article class="recipe-card">-->
+<!--            <h5>Recipe Title</h5>-->
+<!--            <p>300 Calories | 10 Ingredients<p>-->
+<!--            <div class="time">20 min.</div>-->
+<!--        </article>-->
+<!--        <article class="recipe-card">-->
+<!--            <h5>Recipe Title</h5>-->
+<!--            <p>300 Calories | 10 Ingredients<p>-->
+<!--            <div class="time">20 min.</div>-->
+<!--        </article>-->
+<!--    </div>-->
 </main>
 <footer class="footer">
     <div class="footer__container">
