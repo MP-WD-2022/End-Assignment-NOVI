@@ -45,7 +45,6 @@ h2 {
 }
 
 h3 {
-    /*font-size: xxx-large;*/
     font-weight: normal;
     position: relative;
     margin-bottom: 20px;
@@ -55,7 +54,6 @@ p {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /*word-wrap: break-word;*/
 }
 
 /* --------------- 3. Layout --------------*/
@@ -125,7 +123,6 @@ input[type=text] {
 .header__list {
     font-family: Poppins, sans-serif;
     src: url("../assets/fonts/fonts.css");
-    /*src: url("../assets/fonts/Poppins/Poppins-Bold.ttf");*/
     font-size: 13px;
     font-weight: bold;
     display: flex;
@@ -172,7 +169,6 @@ input[type=text] {
 .footer__item {
     font-family: Poppins, sans-serif;
     src: url("../assets/fonts/fonts.css");
-    /*src: url("../assets/fonts/Poppins/Poppins-Bold.ttf");*/
     display: flex;
     flex-direction: column;
     justify-content: center;

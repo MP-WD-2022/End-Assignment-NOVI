@@ -81,7 +81,7 @@ select {
   background-color: #a9a9a9;
 }
 
-#recipe-card-list {
+#random-recipe-card-list #recipe-card-list {
   flex-flow: wrap;
   flex-shrink: 1;
   justify-content: center;

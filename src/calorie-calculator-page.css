@@ -17,7 +17,6 @@ main {
 .form {
     display: flex;
     flex-direction: row;
-    /*justify-content: center;*/
     align-items: baseline;
     width: 30vw;
     padding-block: 10px;

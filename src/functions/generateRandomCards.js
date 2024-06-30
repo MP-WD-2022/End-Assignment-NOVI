@@ -1,6 +1,5 @@
 // function to create 3 random recipe cards with data from fetchRecipeData
 export default function generateRandomCards(arr){
-    console.log("arr" , arr)
     // get elements from HTML to be injected
     const randomCards = document.getElementById("random-recipe-card-list")
     // line to empty the page
@@ -10,7 +9,6 @@ export default function generateRandomCards(arr){
         // variables to remember item id if clicked upon
         const recipeUri = item.recipe.uri
         const recipeId = recipeUri.split("_")[1]
-        console.log(recipeId)
 // inject recipe data into html
         randomCards.innerHTML += `
             <li class="random-card-wrapper general-card-style">

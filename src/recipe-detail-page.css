@@ -11,15 +11,6 @@
     padding: 10px;
 }
 
-
-/*aside {*/
-/*    display: block;*/
-/*}*/
-
-/*ul.a {*/
-/*    list-style-type: circle;*/
-/*}*/
-
 .recipe-info {
     color: #283e53;
 }
@@ -45,10 +36,6 @@ h4 {
     border-radius: 25px;
     font-weight: bold;
 }
-
-/*.js-injected-image {*/
-
-/*}*/
 
 img {
     width: 300px;

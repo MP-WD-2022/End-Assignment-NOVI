@@ -27,34 +27,25 @@
         <article class="hero-text">
             <h1>Delicious Recipes.</h1>
             <h3>Daily Updated.</h3>
-            <input type="button" class="btn btn--recipes" onclick="script" value="Find Recipes" style="cursor:pointer">
+            <button type="button" id="find-recipes-button" class="btn btn--recipes" style="cursor:pointer">Search</button>
         </article>
     </div>
     <ul id="random-recipe-card-list">
     <div class="recipes recipes--daily-updated">
-        <article class="recipe-card" onclick="script" style="cursor:pointer">
-            <h5>Recipe Title</h5>
-            <p>300 Calories | 10 Ingredients<p>
-            <div class="time">20 min.</div>
+<!--        <article class="recipe-card" id="recipe-card-item-1" style="cursor:pointer">-->
+<!--&lt;!&ndash;            <h5>Recipe Title</h5>&ndash;&gt;-->
+<!--&lt;!&ndash;            <p>300 Calories | 10 Ingredients<p>&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="time">20 min.</div>&ndash;&gt;-->
 
-<!--              */ dit verwerken binnen een functie op homepage.js-->
-<!--            <a href="recipe-detail-page.html" class="recipe-card__content-link"></a> /*-->
-
-        </article>
-        <article class="recipe-card recipe-card--transform">
-            <h5>Recipe Title</h5>
-            <p>300 Calories | 10 Ingredients<p>
-            <div class="time">20 min.</div>
-        </article>
-        <article class="recipe-card">
-            <h5>Recipe Title</h5>
-            <p>300 Calories | 10 Ingredients<p>
-            <div class="time">20 min.</div>
-        </article>
+<!--        </article>-->
+<!--        <article class="recipe-card recipe-card&#45;&#45;transform">-->
+<!--            <h5>Recipe Title</h5>-->
+<!--            <p>300 Calories | 10 Ingredients<p>-->
+<!--            <div class="time">20 min.</div>-->
+<!--        </article>-->
     </div>
     </ul>
-    <!--////wel of niet labels toepassen bij 'input' en 'select'? Bij o.a. diet-selectie kan ik maar voor 1 diet kiezen
-    terwijl het vlgsmij de mogelijkheid moet bieden meerdere opties te selecteren, hoe kan ik dit aanpassen?////-->
+
     <div>
         <form id="onSubmit" class="form">
             <label for="recipe-search-field">
@@ -81,11 +72,9 @@
                 <option value="Chinese">Chinese</option>
                 <option value="Eastern Europe">Eastern Europe</option>
                 <option value="French">French</option>
-<!--                <option value="Greek">Greek</option>-->
                 <option value="Indian">Indian</option>
                 <option value="Italian">Italian</option>
                 <option value="Japanese">Japanese</option>
-<!--                <option value="Korean">Korean</option>-->
                 <option value="Kosher">Kosher</option>
                 <option value="Mediterranean">Mediterranean</option>
                 <option value="Mexican">Mexican</option>
@@ -93,7 +82,6 @@
                 <option value="Nordic">Nordic</option>
                 <option value="South American">South American</option>
                 <option value="South East Asian">South East Asian</option>
-<!--                <option value="World">world</option>-->
             </select>
             </label>
             <label for="diet-field">
@@ -131,7 +119,6 @@
                 <option value="">40+ minutes</option>
             </select>
             </label>
-<!--            <input type="button" class="btn btn&#45;&#45;recipes" onclick="script" value="Search" style="cursor:pointer">-->
             <button type="button" id="button" class="btn">Search</button>
         </form>
     </div>
@@ -140,41 +127,6 @@
     <span id="error-message"></span>
     <a href="recipe-detail-page.html"></a>
 
-
-<!--    <div class="recipes">-->
-<!--        <article class="recipe-card">-->
-<!--            <h5>Recipe Title</h5>-->
-<!--            <p>300 Calories | 10 Ingredients<p>-->
-<!--            <div class="time">20 min.</div>-->
-<!--        </article>-->
-<!--        <article class="recipe-card">-->
-<!--            <h5>Recipe Title</h5>-->
-<!--            <p>300 Calories | 10 Ingredients<p>-->
-<!--            <div class="time">20 min.</div>-->
-<!--        </article>-->
-<!--        <article class="recipe-card">-->
-<!--            <h5>Recipe Title</h5>-->
-<!--            <p>300 Calories | 10 Ingredients<p>-->
-<!--            <div class="time">20 min.</div>-->
-<!--        </article>-->
-<!--    </div>-->
-<!--    <div class="recipes">-->
-<!--        <article class="recipe-card">-->
-<!--            <h5>Recipe Title</h5>-->
-<!--            <p>300 Calories | 10 Ingredients<p>-->
-<!--            <div class="time">20 min.</div>-->
-<!--        </article>-->
-<!--        <article class="recipe-card">-->
-<!--            <h5>Recipe Title</h5>-->
-<!--            <p>300 Calories | 10 Ingredients<p>-->
-<!--            <div class="time">20 min.</div>-->
-<!--        </article>-->
-<!--        <article class="recipe-card">-->
-<!--            <h5>Recipe Title</h5>-->
-<!--            <p>300 Calories | 10 Ingredients<p>-->
-<!--            <div class="time">20 min.</div>-->
-<!--        </article>-->
-<!--    </div>-->
 </main>
 <footer class="footer">
     <div class="footer__container">

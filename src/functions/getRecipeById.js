@@ -8,7 +8,7 @@ const BASE_URL = `https://api.edamam.com/api/recipes/v2/`;
 
 async function fetchRecipeById() {
     try {
-        const RECIPE_ID = getRandomInt(1, 100); // Replace with the actual recipe ID you want to fetch
+        const RECIPE_ID = getRandomInt(1, 100);
 
         const response = await axios.get(BASE_URL + RECIPE_ID, {
             params: {
@@ -20,9 +20,6 @@ async function fetchRecipeById() {
 
         const recipe = response.data.recipe;
 
-        console.log('Recipe:', recipe.label);
-        console.log('Ingredients:', recipe.ingredientLines);
-        console.log('URL:', recipe.url);
     } catch (error) {
         console.error('Error fetching recipe by ID:', error);
         if (error.response) {
@@ -38,3 +35,6 @@ async function fetchRecipeById() {
 }
 
 export default fetchRecipeById;
+
+
+

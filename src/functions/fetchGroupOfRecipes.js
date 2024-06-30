@@ -3,7 +3,8 @@ import createRecipeCard from "./createRecipeCard";
 import generateRandomCards from "./generateRandomCards";
 
 // Fetching data from Edamam API
-export default async function fetchRecipeData( searchQuery, mealType, diet, cuisineType, usedFunction ){
+async function fetchGroupOfRecipes( ){
+
     // Declare input values for API
     const RECIPE_URI = "https://api.edamam.com";
     const RECIPE_ENDPOINT = "/api/recipes/v2";
@@ -20,13 +21,16 @@ export default async function fetchRecipeData( searchQuery, mealType, diet, cuis
                     type: "public",
                     app_id: API_ID,
                     app_key: API_KEY,
-                    q: searchQuery,
-                    mealType: mealType || null,
-                    diet: diet || null,
-                    cuisineType: cuisineType || null,
-                    random: true
+                    mealType: "dinner"
                 }
             } )
+
+        const recipeCardItem1 = document.getElementById( "recipe-card-item-1" )
+        recipeCardItem1.innerHTML = `
+            <h5>${ response.data.hits[1].recipe.label }</h5>
+            <p>300 Calories | 10 Ingredients<p>
+            <div class="time">20 min.</div>
+        `
         // Store recipe key in variable
         const arrayOfRecipes = response.data.hits
 
@@ -46,4 +50,4 @@ export default async function fetchRecipeData( searchQuery, mealType, diet, cuis
 
 }
 
-fetchRecipeData( );
+export default fetchGroupOfRecipes;
