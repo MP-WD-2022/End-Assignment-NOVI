@@ -29,7 +29,7 @@ export default async function fetchRecipeData( searchQuery, mealType, diet, cuis
             } )
         // Store recipe key in variable
         const arrayOfRecipes = response.data.hits
-
+        console.log(response.data)
         createRecipeCard( arrayOfRecipes )
         generateRandomCards( arrayOfRecipes )
 

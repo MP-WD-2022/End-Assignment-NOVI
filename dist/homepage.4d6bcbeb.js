@@ -582,14 +582,14 @@ var _getRecipeByIdDefault = parcelHelpers.interopDefault(_getRecipeById);
 var _fetchGroupOfRecipes = require("./functions/fetchGroupOfRecipes");
 var _fetchGroupOfRecipesDefault = parcelHelpers.interopDefault(_fetchGroupOfRecipes);
 const findRecipeButton = document.getElementById("find-recipes-button");
-findRecipeButton.addEventListener("click", (0, _fetchGroupOfRecipesDefault.default)); // function myFunction(){
- //     const input = document.getElementById("recipe-search-field");
- //     const userInput = input.value
- //
- //     fetchRecipeData(userInput)
- //     getRecipeById()
- // }
- // document.getElementById('button').addEventListener('click', myFunction)
+findRecipeButton.addEventListener("click", (0, _fetchGroupOfRecipesDefault.default));
+function myFunction() {
+    const input = document.getElementById("recipe-search-field");
+    const userInput = input.value;
+    (0, _fetchRecipeDataDefault.default)(userInput);
+    (0, _getRecipeByIdDefault.default)();
+}
+document.getElementById("button").addEventListener("click", myFunction);
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./functions/fetchRecipeData":"4FvxE","./functions/getRecipeById":"aGkdq","./functions/fetchGroupOfRecipes":"fVhWr"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
@@ -654,6 +654,7 @@ async function fetchRecipeData(searchQuery, mealType, diet, cuisineType, usedFun
         });
         // Store recipe key in variable
         const arrayOfRecipes = response.data.hits;
+        console.log(response.data);
         (0, _createRecipeCardDefault.default)(arrayOfRecipes);
         (0, _generateRandomCardsDefault.default)(arrayOfRecipes);
     // Catch error messages and show them in the UI
@@ -5505,6 +5506,7 @@ async function fetchGroupOfRecipes() {
                 mealType: "dinner"
             }
         });
+        console.log(response);
         const recipeCardItem1 = document.getElementById("recipe-card-item-1");
         recipeCardItem1.innerHTML = `
             <h5>${response.data.hits[1].recipe.label}</h5>

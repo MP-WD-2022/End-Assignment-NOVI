@@ -24,7 +24,7 @@ async function fetchGroupOfRecipes( ){
                     mealType: "dinner"
                 }
             } )
-
+console.log(response)
         const recipeCardItem1 = document.getElementById( "recipe-card-item-1" )
         recipeCardItem1.innerHTML = `
             <h5>${ response.data.hits[1].recipe.label }</h5>
