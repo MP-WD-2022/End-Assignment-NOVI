@@ -57,7 +57,7 @@ select {
   z-index: 1;
   background-color: #eee;
   border-radius: 2%;
-  flex-direction: column;
+  flex-direction: row;
   flex-basis: 280px;
   justify-content: flex-start;
   min-width: 300px;

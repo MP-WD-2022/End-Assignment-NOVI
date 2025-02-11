@@ -56,7 +56,7 @@ select {
 
 .recipe-card {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
     min-width: 300px;
     background-color: #eeeeee;
