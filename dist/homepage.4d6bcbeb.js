@@ -658,7 +658,42 @@ async function fetchGroupOfRecipes() {
 }
 exports.default = fetchGroupOfRecipes;
 
-},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./generateRandomCards.js":"8m0NT"}],"jo6P5":[function(require,module,exports) {
+},{"./generateRandomCards.js":"8m0NT","axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8m0NT":[function(require,module,exports) {
+// function to create 3 random recipe cards with data from fetchRecipeData
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>generateRandomCards);
+function generateRandomCards(arr) {
+    // get elements from HTML to be injected
+    const randomCards = document.getElementById("random-recipe-card-list");
+    // line to empty the page
+    randomCards.innerHTML = "";
+    // Map function that stops at 3 by slice
+    arr.map((item)=>{
+        // variables to remember item id if clicked upon
+        const recipeUri = item.recipe.uri;
+        const recipeId = recipeUri.split("_")[1];
+        // inject recipe data into html
+        randomCards.innerHTML += `
+            <li class="recipes recipes--daily-updated">
+            <card class="recipe-card" id="recipe-card-item-1" style="cursor:pointer">
+                <a href="/recipe-detail-page.html?id=${recipeId}">
+                    <img class="recipe-card-img" src="${item.recipe.image}" alt="${item.recipe.label}">
+                    <div class="recipe-card-text-wrapper random-card-text-wrapper">
+                        <p>${item.recipe.label}</p>
+                        <div class="space-between-wrap-recipe-cards">
+                            <span> ${Math.round(item.recipe.calories)} Calories | ${item.recipe.ingredients.length} ingredients</span>
+                            <div class="time-icon-recipe-card"></div><span>${item.recipe.totalTime}  min.</span>
+                        </div>
+                    </div>
+                </a>
+            </card>
+            </li>
+            `;
+    });
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _axiosJsDefault.default));
@@ -5359,41 +5394,6 @@ Object.entries(HttpStatusCode).forEach(([key, value])=>{
 });
 exports.default = HttpStatusCode;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8m0NT":[function(require,module,exports) {
-// function to create 3 random recipe cards with data from fetchRecipeData
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>generateRandomCards);
-function generateRandomCards(arr) {
-    // get elements from HTML to be injected
-    const randomCards = document.getElementById("random-recipe-card-list");
-    // line to empty the page
-    randomCards.innerHTML = "";
-    // Map function that stops at 3 by slice
-    arr.map((item)=>{
-        // variables to remember item id if clicked upon
-        const recipeUri = item.recipe.uri;
-        const recipeId = recipeUri.split("_")[1];
-        // inject recipe data into html
-        randomCards.innerHTML += `
-            <li class="recipes recipes--daily-updated">
-            <card class="recipe-card" id="recipe-card-item-1" style="cursor:pointer">
-                <a href="/recipe-detail-page.html?id=${recipeId}">
-                    <img class="recipe-card-img" src="${item.recipe.image}" alt="${item.recipe.label}">
-                    <div class="recipe-card-text-wrapper random-card-text-wrapper">
-                        <p>${item.recipe.label}</p>
-                        <div class="space-between-wrap-recipe-cards">
-                            <span> ${Math.round(item.recipe.calories)} Calories | ${item.recipe.ingredients.length} ingredients</span>
-                            <div class="time-icon-recipe-card"></div><span>${item.recipe.totalTime}  min.</span>
-                        </div>
-                    </div>
-                </a>
-            </card>
-            </li>
-            `;
-    });
-}
-
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4FvxE":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -5435,7 +5435,7 @@ async function fetchRecipeData(searchQuery, mealType, diet, cuisineType, usedFun
     }
 }
 
-},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./createRecipeCard.js":"ikVUz"}],"ikVUz":[function(require,module,exports) {
+},{"axios":"jo6P5","./createRecipeCard.js":"ikVUz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ikVUz":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>createRecipeCard);
