@@ -1,6 +1,5 @@
-import axios from "axios";
-import createRecipeCard from "./createRecipeCard";
-import generateRandomCards from "./generateRandomCards";
+import axios from 'axios';
+import createRecipeCard from "./createRecipeCard.js";
 
 // Fetching data from Edamam API
 export default async function fetchRecipeData( searchQuery, mealType, diet, cuisineType, usedFunction ){
@@ -12,7 +11,6 @@ export default async function fetchRecipeData( searchQuery, mealType, diet, cuis
 
     // If succesfull then....
     try {
-
         // Fetch data from API
         const response = await axios.get( RECIPE_URI + RECIPE_ENDPOINT,
             {
@@ -29,9 +27,8 @@ export default async function fetchRecipeData( searchQuery, mealType, diet, cuis
             } )
         // Store recipe key in variable
         const arrayOfRecipes = response.data.hits
-        console.log(response.data)
+
         createRecipeCard( arrayOfRecipes )
-        generateRandomCards( arrayOfRecipes )
 
         // Catch error messages and show them in the UI
     } catch ( e ) {
@@ -45,5 +42,3 @@ export default async function fetchRecipeData( searchQuery, mealType, diet, cuis
     }
 
 }
-
-fetchRecipeData( );

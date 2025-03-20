@@ -1,16 +1,17 @@
 import {getRandomInt} from '../helpers/getRandomInt';
 import axios from "axios";
 
-const API_ID = "5644587d"; // Replace with your app_id
-const API_KEY = "17843108b9fac140434ab2a2ccb2655b"; // Replace with your app_key
+const API_ID = "5644587d";
+const API_KEY = "17843108b9fac140434ab2a2ccb2655b";
 
 const BASE_URL = `https://api.edamam.com/api/recipes/v2/`;
 
-async function fetchRecipeById() {
+async function getRecipeById() {
     try {
         const RECIPE_ID = getRandomInt(1, 100);
 
-        const response = await axios.get(BASE_URL + RECIPE_ID, {
+        const response = await axios.get(BASE_URL + RECIPE_ID,
+            {
             params: {
                 type: 'public',
                 app_id: API_ID,
@@ -34,7 +35,7 @@ async function fetchRecipeById() {
     }
 }
 
-export default fetchRecipeById;
+export default getRecipeById;
 
 
 
