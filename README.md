@@ -13,6 +13,7 @@ Op deze pagina kan de gebruiker een productnaam of barcode van een product invoe
 
 Sreenshot van de belangrijkste pagina van de applicatie:
 
+assets/images/homepage.jpg
 
 Lijst van benodigdheden om de applicatie te kunnen gebruiken:
 API-ID (Recipe Search and Meal Planner API):	in Deelopdracht.4 vermeld
