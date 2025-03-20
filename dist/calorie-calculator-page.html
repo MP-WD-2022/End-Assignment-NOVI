@@ -26,8 +26,8 @@
     <h2>Calorie Calculator</h2>
     <label for="product-search"></label>
     <input type="text" id="product-search" name="product search" placeholder="Barcode / product">
-    <input type="button" class="btn btn--product" onclick="script" value="Search" style="cursor: pointer">
-    <table class="table">
+    <button type="button" id="searchProduct" onclick="searchProduct()" class="btn btn--product" style="cursor: pointer">Search</button>
+    <table id="productTable" class="table">
         <thead>
         <tr>
             <th>Product</th>
@@ -37,8 +37,8 @@
         </thead>
         <tbody>
         <tr>
-            <td>Mars</td>
-            <td>60</td>
+            <td>...</td>
+            <td>...</td>
             <td>Gram</td>
         </tr>
         </tbody>
@@ -48,29 +48,29 @@
         <label for="amount"></label>
         <input type="text" id="amount" name="amount-product">
         <h5>Serving(s)</h5>
-        <input type="button" class="btn btn--servings" onclick="script" value="+ Add" style="cursor: pointer">
+        <input type="button" class="btn btn--servings" onclick="addProduct()" value="+ Add" style="cursor: pointer">
     </form>
-    <table class="table">
+    <table id="nutritionTable" class="table">
         <thead>
         <tr>
             <th>Product</th>
-            <th>Calories</th>
-            <th>Fat</th>
-            <th>Carbs</th>
+            <th id="totalCalories">Calories</th>
+            <th id="totalFat">Fat</th>
+            <th id="totalCarbs">Carbs</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td>Milk</td>
-            <td>149 kcal</td>
-            <td>8 g</td>
-            <td>12 g</td>
+            <td>...</td>
+            <td>...kcal</td>
+            <td>...g</td>
+            <td>...g</td>
         </tr>
         <tr>
-            <td>Mars</td>
-            <td>234 kcal</td>
-            <td>12 g</td>
-            <td>31 g</td>
+            <td>...</td>
+            <td>...kcal</td>
+            <td>...g</td>
+            <td>...g</td>
         </tr>
         <tr>
             <td>...</td>

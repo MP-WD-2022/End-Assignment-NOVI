@@ -5,13 +5,14 @@ export default function generateRandomCards(arr){
     // line to empty the page
     randomCards.innerHTML = ""
     // Map function that stops at 3 by slice
-    arr.slice(0,3).map((item) => {
+    arr.map((item) => {
         // variables to remember item id if clicked upon
         const recipeUri = item.recipe.uri
         const recipeId = recipeUri.split("_")[1]
 // inject recipe data into html
         randomCards.innerHTML += `
-            <li class="random-card-wrapper general-card-style">
+            <li class="recipes recipes--daily-updated">
+            <card class="recipe-card" id="recipe-card-item-1" style="cursor:pointer">
                 <a href="/recipe-detail-page.html?id=${recipeId}">
                     <img class="recipe-card-img" src="${item.recipe.image}" alt="${item.recipe.label}">
                     <div class="recipe-card-text-wrapper random-card-text-wrapper">
@@ -22,6 +23,7 @@ export default function generateRandomCards(arr){
                         </div>
                     </div>
                 </a>
+            </card>
             </li>
             `
     })

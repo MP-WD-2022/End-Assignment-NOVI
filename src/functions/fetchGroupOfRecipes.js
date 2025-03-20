@@ -1,6 +1,5 @@
-import axios from "axios";
-import createRecipeCard from "./createRecipeCard";
-import generateRandomCards from "./generateRandomCards";
+import generateRandomCards from "./generateRandomCards.js";
+import axios from 'axios';
 
 // Fetching data from Edamam API
 async function fetchGroupOfRecipes( ){
@@ -21,20 +20,14 @@ async function fetchGroupOfRecipes( ){
                     type: "public",
                     app_id: API_ID,
                     app_key: API_KEY,
-                    mealType: "dinner"
+                    mealType: "dinner",
+                    random: true
                 }
             } )
-console.log(response)
-        const recipeCardItem1 = document.getElementById( "recipe-card-item-1" )
-        recipeCardItem1.innerHTML = `
-            <h5>${ response.data.hits[1].recipe.label }</h5>
-            <p>300 Calories | 10 Ingredients<p>
-            <div class="time">20 min.</div>
-        `
-        // Store recipe key in variable
-        const arrayOfRecipes = response.data.hits
 
-        createRecipeCard( arrayOfRecipes )
+        const arrayOfRecipes = response.data.hits.sort(() => Math.random() - 0.5).slice(0, 3);
+
+
         generateRandomCards( arrayOfRecipes )
 
         // Catch error messages and show them in the UI

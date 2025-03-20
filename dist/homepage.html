@@ -31,21 +31,9 @@
         </article>
     </div>
     <ul id="random-recipe-card-list">
-    <div class="recipes recipes--daily-updated">
-        <article class="recipe-card" id="recipe-card-item-1" style="cursor: pointer">
-<!--            <h5>Recipe Title</h5>-->
-<!--            <p>300 Calories | 10 Ingredients<p>-->
-<!--            <div class="time">20 min.</div>-->
-
-        </article>
-        <article class="recipe-card recipe-card--transform">
-<!--            <h5>Recipe Title</h5>-->
-<!--            <p>300 Calories | 10 Ingredients<p>-->
-<!--            <div class="time">20 min.</div>-->
-        </article>
-    </div>
+        <span id="error-message random-recipe-card-list"></span>
+        <a href="/recipe-detail-page.html"></a>
     </ul>
-
     <div>
         <form id="onSubmit" class="form">
             <label for="recipe-search-field">
@@ -119,13 +107,14 @@
                 <option value="">40+ minutes</option>
             </select>
             </label>
-            <button type="button" id="button" class="btn">Search</button>
+            <button type="button" id="button" class="btn btn--recipes" style="cursor: pointer">Search</button>
         </form>
     </div>
 
-    <ul id="recipe-card-list"></ul>
+    <ul id="recipe-card-list" style="cursor: pointer">
     <span id="error-message"></span>
     <a href="/recipe-detail-page.html"></a>
+    </ul>
 
 </main>
 <footer class="footer">

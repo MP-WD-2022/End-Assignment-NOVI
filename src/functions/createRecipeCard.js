@@ -1,10 +1,12 @@
 export default function createRecipeCard ( recipesArr ) {
 
+    // get elements from HTML to be injected
     const recipeList = document.getElementById('recipe-card-list')
-
-    recipeList.textContent = "";
+    // line to empty the page
+    recipeList.textContent = ""
 
     recipesArr.map(( item ) => {
+
         // create a li item per recipe
         const recipeItem = document.createElement('li');
         recipeItem.setAttribute('class', 'recipe-list-item');
@@ -17,7 +19,7 @@ export default function createRecipeCard ( recipesArr ) {
         // create an img item per recipe
         const recipeImg = document.createElement('img');
         recipeImg.setAttribute('class', 'recipe-img');
-        recipeImg.setAttribute('src', `${ item.recipe.image }`)
+        recipeImg.setAttribute('src', `${ item.recipe.image }`);
 
         // create paragraph text in element
         const recipeText = document.createElement('p');
@@ -37,8 +39,8 @@ export default function createRecipeCard ( recipesArr ) {
 
         // append ul with li
         recipeList.appendChild(recipeItem);
-
     })
 
 }
+
 

@@ -575,23 +575,22 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
 
 },{}],"gLLPy":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-var _fetchRecipeData = require("./functions/fetchRecipeData");
-var _fetchRecipeDataDefault = parcelHelpers.interopDefault(_fetchRecipeData);
-var _getRecipeById = require("./functions/getRecipeById");
-var _getRecipeByIdDefault = parcelHelpers.interopDefault(_getRecipeById);
-var _fetchGroupOfRecipes = require("./functions/fetchGroupOfRecipes");
-var _fetchGroupOfRecipesDefault = parcelHelpers.interopDefault(_fetchGroupOfRecipes);
+var _fetchGroupOfRecipesJs = require("./functions/fetchGroupOfRecipes.js");
+var _fetchGroupOfRecipesJsDefault = parcelHelpers.interopDefault(_fetchGroupOfRecipesJs);
+var _fetchRecipeDataJs = require("./functions/fetchRecipeData.js");
+var _fetchRecipeDataJsDefault = parcelHelpers.interopDefault(_fetchRecipeDataJs);
 const findRecipeButton = document.getElementById("find-recipes-button");
-findRecipeButton.addEventListener("click", (0, _fetchGroupOfRecipesDefault.default));
+findRecipeButton.addEventListener("click", (0, _fetchGroupOfRecipesJsDefault.default));
+const input = document.getElementById("recipe-search-field");
+// line to empty the recipe search field
+input.innerHTML = "";
 function myFunction() {
-    const input = document.getElementById("recipe-search-field");
-    const userInput = input.value;
-    (0, _fetchRecipeDataDefault.default)(userInput);
-    (0, _getRecipeByIdDefault.default)();
+    if (input.value) (0, _fetchRecipeDataJsDefault.default)(input.value);
+     // void getRecipeById()
 }
 document.getElementById("button").addEventListener("click", myFunction);
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./functions/fetchRecipeData":"4FvxE","./functions/getRecipeById":"aGkdq","./functions/fetchGroupOfRecipes":"fVhWr"}],"gkKU3":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./functions/fetchGroupOfRecipes.js":"fVhWr","./functions/fetchRecipeData.js":"4FvxE"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -621,17 +620,15 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"4FvxE":[function(require,module,exports) {
+},{}],"fVhWr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>fetchRecipeData);
+var _generateRandomCardsJs = require("./generateRandomCards.js");
+var _generateRandomCardsJsDefault = parcelHelpers.interopDefault(_generateRandomCardsJs);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _createRecipeCard = require("./createRecipeCard");
-var _createRecipeCardDefault = parcelHelpers.interopDefault(_createRecipeCard);
-var _generateRandomCards = require("./generateRandomCards");
-var _generateRandomCardsDefault = parcelHelpers.interopDefault(_generateRandomCards);
-async function fetchRecipeData(searchQuery, mealType, diet, cuisineType, usedFunction) {
+// Fetching data from Edamam API
+async function fetchGroupOfRecipes() {
     // Declare input values for API
     const RECIPE_URI = "https://api.edamam.com";
     const RECIPE_ENDPOINT = "/api/recipes/v2";
@@ -645,18 +642,12 @@ async function fetchRecipeData(searchQuery, mealType, diet, cuisineType, usedFun
                 type: "public",
                 app_id: API_ID,
                 app_key: API_KEY,
-                q: searchQuery,
-                mealType: mealType || null,
-                diet: diet || null,
-                cuisineType: cuisineType || null,
+                mealType: "dinner",
                 random: true
             }
         });
-        // Store recipe key in variable
-        const arrayOfRecipes = response.data.hits;
-        console.log(response.data);
-        (0, _createRecipeCardDefault.default)(arrayOfRecipes);
-        (0, _generateRandomCardsDefault.default)(arrayOfRecipes);
+        const arrayOfRecipes = response.data.hits.sort(()=>Math.random() - 0.5).slice(0, 3);
+        (0, _generateRandomCardsJsDefault.default)(arrayOfRecipes);
     // Catch error messages and show them in the UI
     } catch (e) {
         console.error(e);
@@ -665,9 +656,9 @@ async function fetchRecipeData(searchQuery, mealType, diet, cuisineType, usedFun
         else if (e.response.status === 500) error.innerContent = "internal server error";
     }
 }
-fetchRecipeData();
+exports.default = fetchGroupOfRecipes;
 
-},{"axios":"jo6P5","./createRecipeCard":"ikVUz","./generateRandomCards":"8m0NT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
+},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./generateRandomCards.js":"8m0NT"}],"jo6P5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _axiosJsDefault.default));
@@ -5368,12 +5359,90 @@ Object.entries(HttpStatusCode).forEach(([key, value])=>{
 });
 exports.default = HttpStatusCode;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ikVUz":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8m0NT":[function(require,module,exports) {
+// function to create 3 random recipe cards with data from fetchRecipeData
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>generateRandomCards);
+function generateRandomCards(arr) {
+    // get elements from HTML to be injected
+    const randomCards = document.getElementById("random-recipe-card-list");
+    // line to empty the page
+    randomCards.innerHTML = "";
+    // Map function that stops at 3 by slice
+    arr.map((item)=>{
+        // variables to remember item id if clicked upon
+        const recipeUri = item.recipe.uri;
+        const recipeId = recipeUri.split("_")[1];
+        // inject recipe data into html
+        randomCards.innerHTML += `
+            <li class="recipes recipes--daily-updated">
+            <card class="recipe-card" id="recipe-card-item-1" style="cursor:pointer">
+                <a href="/recipe-detail-page.html?id=${recipeId}">
+                    <img class="recipe-card-img" src="${item.recipe.image}" alt="${item.recipe.label}">
+                    <div class="recipe-card-text-wrapper random-card-text-wrapper">
+                        <p>${item.recipe.label}</p>
+                        <div class="space-between-wrap-recipe-cards">
+                            <span> ${Math.round(item.recipe.calories)} Calories | ${item.recipe.ingredients.length} ingredients</span>
+                            <div class="time-icon-recipe-card"></div><span>${item.recipe.totalTime}  min.</span>
+                        </div>
+                    </div>
+                </a>
+            </card>
+            </li>
+            `;
+    });
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4FvxE":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>fetchRecipeData);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _createRecipeCardJs = require("./createRecipeCard.js");
+var _createRecipeCardJsDefault = parcelHelpers.interopDefault(_createRecipeCardJs);
+async function fetchRecipeData(searchQuery, mealType, diet, cuisineType, usedFunction) {
+    // Declare input values for API
+    const RECIPE_URI = "https://api.edamam.com";
+    const RECIPE_ENDPOINT = "/api/recipes/v2";
+    const API_ID = "5644587d";
+    const API_KEY = "17843108b9fac140434ab2a2ccb2655b";
+    // If succesfull then....
+    try {
+        // Fetch data from API
+        const response = await (0, _axiosDefault.default).get(RECIPE_URI + RECIPE_ENDPOINT, {
+            params: {
+                type: "public",
+                app_id: API_ID,
+                app_key: API_KEY,
+                q: searchQuery,
+                mealType: mealType || null,
+                diet: diet || null,
+                cuisineType: cuisineType || null,
+                random: true
+            }
+        });
+        // Store recipe key in variable
+        const arrayOfRecipes = response.data.hits;
+        (0, _createRecipeCardJsDefault.default)(arrayOfRecipes);
+    // Catch error messages and show them in the UI
+    } catch (e) {
+        console.error(e);
+        const error = document.getElementById("error-message");
+        if (e.response.status === 404) error.innerContent = "page not found";
+        else if (e.response.status === 500) error.innerContent = "internal server error";
+    }
+}
+
+},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./createRecipeCard.js":"ikVUz"}],"ikVUz":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>createRecipeCard);
 function createRecipeCard(recipesArr) {
+    // get elements from HTML to be injected
     const recipeList = document.getElementById("recipe-card-list");
+    // line to empty the page
     recipeList.textContent = "";
     recipesArr.map((item)=>{
         // create a li item per recipe
@@ -5405,128 +5474,6 @@ function createRecipeCard(recipesArr) {
     });
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8m0NT":[function(require,module,exports) {
-// function to create 3 random recipe cards with data from fetchRecipeData
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>generateRandomCards);
-function generateRandomCards(arr) {
-    // get elements from HTML to be injected
-    const randomCards = document.getElementById("random-recipe-card-list");
-    // line to empty the page
-    randomCards.innerHTML = "";
-    // Map function that stops at 3 by slice
-    arr.slice(0, 3).map((item)=>{
-        // variables to remember item id if clicked upon
-        const recipeUri = item.recipe.uri;
-        const recipeId = recipeUri.split("_")[1];
-        // inject recipe data into html
-        randomCards.innerHTML += `
-            <li class="random-card-wrapper general-card-style">
-                <a href="/recipe-detail-page.html?id=${recipeId}">
-                    <img class="recipe-card-img" src="${item.recipe.image}" alt="${item.recipe.label}">
-                    <div class="recipe-card-text-wrapper random-card-text-wrapper">
-                        <p>${item.recipe.label}</p>
-                        <div class="space-between-wrap-recipe-cards">
-                            <span> ${Math.round(item.recipe.calories)} Calories | ${item.recipe.ingredients.length} ingredients</span>
-                            <div class="time-icon-recipe-card"></div><span>${item.recipe.totalTime}  min.</span>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            `;
-    });
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aGkdq":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _getRandomInt = require("../helpers/getRandomInt");
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-const API_ID = "5644587d"; // Replace with your app_id
-const API_KEY = "17843108b9fac140434ab2a2ccb2655b"; // Replace with your app_key
-const BASE_URL = `https://api.edamam.com/api/recipes/v2/`;
-async function fetchRecipeById() {
-    try {
-        const RECIPE_ID = (0, _getRandomInt.getRandomInt)(1, 100);
-        const response = await (0, _axiosDefault.default).get(BASE_URL + RECIPE_ID, {
-            params: {
-                type: "public",
-                app_id: API_ID,
-                app_key: API_KEY
-            }
-        });
-        const recipe = response.data.recipe;
-    } catch (error) {
-        console.error("Error fetching recipe by ID:", error);
-        if (error.response) {
-            if (error.response.status === 404) console.error("Recipe not found");
-            else if (error.response.status === 500) console.error("Internal server error");
-            else console.error("An error occurred:", error.message);
-        }
-    }
-}
-exports.default = fetchRecipeById;
-
-},{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../helpers/getRandomInt":"5g8DS"}],"5g8DS":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getRandomInt", ()=>getRandomInt);
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fVhWr":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _createRecipeCard = require("./createRecipeCard");
-var _createRecipeCardDefault = parcelHelpers.interopDefault(_createRecipeCard);
-var _generateRandomCards = require("./generateRandomCards");
-var _generateRandomCardsDefault = parcelHelpers.interopDefault(_generateRandomCards);
-// Fetching data from Edamam API
-async function fetchGroupOfRecipes() {
-    // Declare input values for API
-    const RECIPE_URI = "https://api.edamam.com";
-    const RECIPE_ENDPOINT = "/api/recipes/v2";
-    const API_ID = "5644587d";
-    const API_KEY = "17843108b9fac140434ab2a2ccb2655b";
-    // If succesfull then....
-    try {
-        // Fetch data from API
-        const response = await (0, _axiosDefault.default).get(RECIPE_URI + RECIPE_ENDPOINT, {
-            params: {
-                type: "public",
-                app_id: API_ID,
-                app_key: API_KEY,
-                mealType: "dinner"
-            }
-        });
-        console.log(response);
-        const recipeCardItem1 = document.getElementById("recipe-card-item-1");
-        recipeCardItem1.innerHTML = `
-            <h5>${response.data.hits[1].recipe.label}</h5>
-            <p>300 Calories | 10 Ingredients<p>
-            <div class="time">20 min.</div>
-        `;
-        // Store recipe key in variable
-        const arrayOfRecipes = response.data.hits;
-        (0, _createRecipeCardDefault.default)(arrayOfRecipes);
-        (0, _generateRandomCardsDefault.default)(arrayOfRecipes);
-    // Catch error messages and show them in the UI
-    } catch (e) {
-        console.error(e);
-        const error = document.getElementById("error-message");
-        if (e.response.status === 404) error.innerContent = "page not found";
-        else if (e.response.status === 500) error.innerContent = "internal server error";
-    }
-}
-exports.default = fetchGroupOfRecipes;
-
-},{"axios":"jo6P5","./createRecipeCard":"ikVUz","./generateRandomCards":"8m0NT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["f3BSW","gLLPy"], "gLLPy", "parcelRequireca8e")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["f3BSW","gLLPy"], "gLLPy", "parcelRequireca8e")
 
 //# sourceMappingURL=homepage.4d6bcbeb.js.map

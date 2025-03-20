@@ -84,7 +84,7 @@ input[type=text] {
     padding: 10px 20px 10px 20px;
 }
 
-.time {
+.time-icon-recipe-card {
     text-align: right;
     background-image: url("../assets/icons/time.png");
     background-position: 80% 50%;
@@ -154,6 +154,7 @@ input[type=text] {
     padding:50px 0;
     background-color:#283e53;
     color:#70b6be;
+    margin-top: 80px;
 }
 
 .footer__container {
@@ -263,8 +264,3 @@ input[type=text] {
         flex-direction: column;
     }
 }
-
-
-
-
-
